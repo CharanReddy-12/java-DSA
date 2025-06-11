@@ -1,0 +1,15 @@
+class Solution {
+    public boolean isValidBST(TreeNode root)
+    {
+        return isvalid(root,null,null);
+    }
+    public boolean isvalid(TreeNode node,Integer min,Integer max)
+    {
+        if(node==null) return true;
+        
+        if((min!=null && node.val<=min)||(max!=null && node.val>=max)){
+            return false;
+        }
+        return isvalid(node.left,min,node.val) && isvalid(node.right,node.val,max);
+    }
+}
