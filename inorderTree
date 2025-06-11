@@ -1,0 +1,32 @@
+import java.util.*;
+class Inorder
+{
+    static class Node
+    {
+        int key;
+        Node left, right;
+        public Node(int item)
+        {
+            key=item;
+            left=right=null;
+        }
+    }
+    Node root;
+    void traverseTree(Node node)
+    {
+        if(node==null) return;
+        traverseTree(node.left);
+        System.out.println(" "+node.key);
+        traverseTree(node.right);
+    }
+    public static void main(String[] args)
+    {
+        Inorder tree=new Inorder();
+        tree.root=new Inorder.Node(1);
+        tree.root.left=new Inorder.Node(2);
+        tree.root.right=new Inorder.Node(3);
+        tree.root.left.left=new Inorder.Node(4);
+        System.out.println("inorder traversal of tree is:");
+        tree.traverseTree(tree.root);
+    }
+}
