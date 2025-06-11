@@ -1,0 +1,33 @@
+import java.util.*;
+class BinaryTree1{
+    static class Node
+    {
+        int key;
+        Node left,right;
+        public Node(int item)
+        {
+            key=item;
+            left=right=null;
+        }
+    }
+        Node root;
+        void traverseTree(Node node)
+        {
+            if(node==null) return;
+            traverseTree(node.left);
+            traverseTree(node.right);
+            System.out.println(" "+node.key);
+
+
+        }
+        public static void main(String[] args)
+        {
+            BinaryTree1 tree=new BinaryTree1();
+            tree.root=new BinaryTree1.Node(1);
+            tree.root.left=new BinaryTree1.Node(2);
+            tree.root.right=new BinaryTree1.Node(3);
+            tree.root.left.left=new BinaryTree1.Node(4);
+            System.out.println("postorder traversal of binary tree is:");
+            tree.traverseTree(tree.root);
+    }
+}
