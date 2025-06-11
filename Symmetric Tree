@@ -1,0 +1,20 @@
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+       return invert(root, root);
+    }
+    public boolean invert(TreeNode p, TreeNode q) {
+        if (p == null && q == null) 
+        {
+            return true;
+        }
+        if (p == null || q== null)
+        {
+            return false;
+        }
+        if (p.val != q.val) 
+        {
+            return false;
+        }
+        return invert(p.left, q.right) && invert(p.right, q.left);
+    }
+}
