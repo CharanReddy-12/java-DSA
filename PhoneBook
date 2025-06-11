@@ -1,0 +1,47 @@
+import java.util.*;
+public class phonebook{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String[] names=new String[100];
+        String[] phonenumbers=new String[100];
+        int count=0;
+        int choice=0;
+        while(choice!=4){
+            System.out.println("1.Add contacts");
+            System.out.println("2.view contacts");
+            System.out.println("3.search contacts");
+            System.out.println("4.not found");
+            System.out.println("enter your choice");
+            choice=sc.nextInt();
+            sc.nextLine();
+        if(choice==1){
+            System.out.println("enter name");
+            names[count]=sc.nextLine();
+            System.out.println("enter phone number");
+            phonenumbers[count]=sc.nextLine();
+            count++;
+        }else if(choice==2){
+            System.out.println("contacts are:");
+            for(int i=0;i<count;i++){
+                System.out.println("name:"+names[i]+",phone number:"+phonenumbers[i]);
+            else if(choice==3){
+                System.out.println("enter name to search");
+                String searchName=sc.nextLine();
+                boolean found=false;
+                for(int i=0;i<count;i++){
+                    if(names[i].equalsIgnoreCase(searchName)){
+                        System.out.println("name:"+names[i]+",phone number:"+phonenumbers[i]);
+                        found=true;
+                        break;
+                    }
+                }
+
+            }
+        }
+
+        }
+    }
+        }
+System.out.println("contact not found");
+sc.close();
+    }
