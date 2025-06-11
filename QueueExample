@@ -1,0 +1,49 @@
+import java.util.Queue;
+import java.util.ArrayDeque;
+ class QueueExample1{
+        Queue<Integer> queue = new ArrayDeque<>();
+        public void addElements(){
+            queue.offer(10);
+            queue.offer(20);
+            queue.offer(30);
+            System.out.println("Elements are added to the queue:");
+        }
+        public void displayQueue(){
+                System.out.println("queue  elements are:"+queue);
+   
+        }
+        public void removeElements(){
+            if(queue.isEmpty()){
+                System.out.println("cannot remove elements");
+            }else{
+                System.out.println("removed element is:"+queue.poll());
+            }
+        }
+        public void peekElement(){
+            System.out.println("peek element is:"+queue.peek());
+        }
+        public void isEmpty(){
+            System.out.println("queue is empty:"+queue.isEmpty());
+
+        }
+        public void sizeofQueue(){
+            System.out.println("size of queue is:"+queue.size());
+        }
+        public void clearQueue(){
+            queue.clear();
+            System.out.println("queue is cleared");
+            System.out.println("queue size is:"+queue.size());
+        }
+}
+public class QueueExample{
+public static void main(String[] args){
+    QueueExample1 queue1=new QueueExample1();
+    queue1.addElements();
+    queue1.displayQueue();
+    queue1.removeElements();
+    queue1.peekElement();
+    queue1.isEmpty();
+    queue1.sizeofQueue();
+    queue1.clearQueue();
+}
+}
